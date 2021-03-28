@@ -1,4 +1,12 @@
+# jobs:
+#   test:
+#     override:
+#       - mocha
+
+# version: 2.1
+
 jobs:
   test:
-    override:
-      - mocha
+    steps:
+    - checkout
+    - run: mocha
