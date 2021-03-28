@@ -5,12 +5,29 @@
 
 # version: 2.1
 
+# jobs:
+#   test:
+#     # machine:
+#     #   image: "ubuntu-1604:202004-01"
+#     docker:
+#       - image: circleci/<language>:<version TAG>
+#     steps:
+#     - checkout
+#     - run: mocha
+
+version: 2.1
+
 jobs:
   test:
-    # machine:
-    #   image: "ubuntu-1604:202004-01"
     docker:
-      - image: circleci/<language>:<version TAG>
+      - image: circleci/node:4.8.2
     steps:
-    - checkout
-    - run: mocha
+      - checkout
+      # - run: echo 'test step'
+      - run: mocha
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - test
