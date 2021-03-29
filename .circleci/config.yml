@@ -24,8 +24,8 @@ jobs:
     steps:
       - checkout
       # - run: echo 'test step'
-      - run: npm install mocha
-      - run: npm mocha test/*.js
+      - run: npm install --save-dev mocha
+      - run: npm install dev
 
 workflows:
   version: 2
